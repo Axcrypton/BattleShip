@@ -115,7 +115,6 @@ export default class Gameboard {
         }
 
     }
-
     // Returns true if every ship on the board has been sunk.
     allShipsSunk() {
 

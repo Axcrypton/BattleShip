@@ -50,17 +50,17 @@ class Game {
         this.nextTurn();
 
         if (this.currentPlayer instanceof ComputerPlayer) {
-        const [cx, cy] = this.currentPlayer.chooseMove();
+            const [cx, cy] = this.currentPlayer.chooseMove();
 
-        this.performAttack(cx, cy);
+            this.performAttack(cx, cy);
 
-        if (this.isOver()) {
-            return;
+            if (this.isOver()) {
+                return;
+            }
+
+            this.nextTurn();
         }
-
-        this.nextTurn();
     }
-}
 
     // Applies an attack to the opposing player's gameboard.
     performAttack(x, y) {
@@ -74,13 +74,13 @@ class Game {
 
     // Checks if either player has lost all ships.
     isOver() {
-        return this.player1.gameboard.allShipsSunk() || 
-        this.player2.gameboard.allShipsSunk()
+        return this.player1.gameboard.allShipsSunk() ||
+            this.player2.gameboard.allShipsSunk();
     }
 
     // Returns the winning player once the game ends.
     getWinner() {
-            if (this.player1.gameboard.allShipsSunk()) {
+        if (this.player1.gameboard.allShipsSunk()) {
             return this.player2;
         }
 
@@ -90,7 +90,6 @@ class Game {
 
         return null;
     }
-    
 }
 
 export default Game;

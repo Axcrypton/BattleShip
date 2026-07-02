@@ -9,7 +9,7 @@ class Player {
 
     // Attacks a coordinate on the opponent's gameboard.
     attack(opponent, x, y) {
-        opponent.gameboard.receiveAttack(x, y)
+        opponent.gameboard.receiveAttack(x, y);
     }
 }
 
